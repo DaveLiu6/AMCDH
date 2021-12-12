@@ -23,9 +23,9 @@ import numpy as np
 import os
 
 
-class MAWDH(BasicModule):
+class AMCDH(BasicModule):
     def __init__(self, bit, ydim):
-        super(MAWDH, self).__init__()
+        super(AMCDH, self).__init__()
 
         self.bit = bit
         self.ydim = ydim
@@ -152,7 +152,7 @@ class Text_net(BasicModule):
 if __name__ == '__main__':
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'
     img = torch.randn((64, 3, 224, 224)).cuda()
-    model = MAWDH(64, 1386).cuda()
+    model = AMCDH(64, 1386).cuda()
     out = model(img)
     print('ok')
 
